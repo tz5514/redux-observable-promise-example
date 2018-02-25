@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "next/babel",
+    "stage-0"
+  ],
+  
+  "plugins": [
+    ["provide-modules", {
+      "lodash": "_"
+    }],
+
+    ["module-resolver", {
+      "root": ["./", "./src"]
+    }]
+  ]
+}
