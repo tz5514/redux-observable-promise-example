@@ -5,7 +5,7 @@ import { fetchNewsList, fetchNewsListAsync } from 'News/NewsList/redux/NewsListA
 class IndexPage extends React.PureComponent {
   static async getInitialProps({ store }) {
     try {
-      // const result = await store.dispatch(fetchNewsListAsync());
+      const result = await store.dispatch(fetchNewsListAsync());
     } catch (error) {
       console.log(error);
     }
