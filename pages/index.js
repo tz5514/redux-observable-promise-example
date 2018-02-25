@@ -3,11 +3,13 @@ import initStore from '../config/store'
 import { fetchNewsList, fetchNewsListAsync } from 'News/NewsList/redux/NewsListActions'
 
 class IndexPage extends React.PureComponent {
-  static async getInitialProps({ store }) {
-    try {
-      const result = await store.dispatch(fetchNewsListAsync());
-    } catch (error) {
-      console.log(error);
+  static async getInitialProps({ store, isServer }) {
+    if (isServer) {
+      try {
+        const result = await store.dispatch(fetchNewsListAsync());
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
